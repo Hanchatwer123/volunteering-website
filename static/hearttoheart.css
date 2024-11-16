@@ -1,0 +1,269 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.top-menu {
+  background: linear-gradient(45deg, #ff6a00, #ff6a00);
+  padding: 15px 30px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.menu-main {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-main li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.menu-main li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.menu-main li a:hover {
+  color: #ffeb3b;
+}
+
+.section {
+  padding: 50px;
+  margin-top: 60px; 
+}
+
+.section-title {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #333;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px; 
+}
+
+.leaderboard .table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+}
+
+.leaderboard th, .leaderboard td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.leaderboard th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.leaderboard tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.requests {
+  background-color: #ffeb3b;
+}
+
+.requests-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.request {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 30%; 
+}
+
+.request-image {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.request-text {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.profile {
+  background-color: #ffb74d;
+}
+
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: black;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.profile-info {
+  color: white;
+  font-size: 1.2em;
+  flex-grow: 1;
+}
+
+.profile-info p {
+  margin: 10px 0;
+}
+
+.gradient-button {
+  background: linear-gradient(45deg, #ff6a00, #ff6a00);
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.gradient-button:hover {
+  background: linear-gradient(45deg, #ff6a00, #ffcc00);
+}
+
+@media (max-width: 768px) {
+  .requests-container {
+    flex-direction: column; 
+  }
+
+  .profile-box {
+    flex-direction: column; 
+    text-align: center;
+  }
+
+  .profile-info {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-info {
+    font-size: 1em;
+  }
+}
+
+.apply {
+  background-color: #f9f9f9;
+  padding: 50px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.apply form {
+  background-color: #4CAF50;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: auto;
+}
+
+.apply .form-group {
+  margin-bottom: 20px;
+}
+
+.apply label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.apply input[type="text"],
+.apply textarea,
+.apply input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.apply input[type="text"]:focus,
+.apply textarea:focus,
+.apply input[type="file"]:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.apply .gradient-button {
+  background: linear-gradient(45deg, #ff6a00, #ffcc00);
+  padding: 15px 30px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.apply .gradient-button:hover {
+  background: linear-gradient(45deg, #ff6a00, #ffeb3b);
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+.request:hover {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.fade-in-visible {
+  opacity: 1;
+}

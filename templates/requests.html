@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="requests" class="section requests">
+    <h2 class="section-title fade-in">Requests</h2>
+    <div class="row requests-container fade-in">
+        <div class="request">
+            <img class="request-image fade-in" src="https://thispersonnotexist.org/downloadimage/Ac3RhdGljL21hbi9zZWVkMjE3NzQuanBlZw==" alt="Anna Maria">
+            <p class="request-text">Мне нужно 50000тг чтобы оплатить обучение моего сына.</p>
+        </div>
+        <div class="request">
+            <img class="request-image fade-in" src="https://thispersonnotexist.org/downloadimage/Ac3RhdGljL21hbi9zZWVkMjcyNS5qcGVn" alt="John Smith">
+            <p class="request-text">Мне нужно 5000тг чтобы прокормить моих 3-х дочерей.</p>
+        </div>
+        <div class="request">
+            <img class="request-image fade-in" src="https://thispersonnotexist.org/downloadimage/Ac3RhdGljL21hbi9zZWVkMTk4MzQuanBlZw==" alt="Bob Clark">
+            <p class="request-text">Кто-нибудь может одолжить велосипед чтобы мне легче было добиратся к моей третьей работе?</p>
+        </div>
+    </div>
+
+    {% if requests %}
+        <div class="requests-container">
+            {% for request in requests %}
+            <div class="request fade-in">
+                <h3>{{ request.name }}</h3>
+                <p><strong>Request Details:</strong> {{ request.request_details }}</p>
+                <p><strong>Supporting Document:</strong></p>
+                <img src="{{ url_for('static', filename='uploads/' + request['file_path'].split('/')[-1]) }}" alt="Document Image" class="request-image">
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+</section>
+{% endblock %}

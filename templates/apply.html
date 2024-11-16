@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="apply" class="section apply">
+    <h2 class="section-title fade-in">Apply for Help</h2>
+    <p>If you need assistance, please fill out the form below and upload a photo of the supporting document.</p>
+    <form action="{{ url_for('apply') }}" method="POST" enctype="multipart/form-data">
+        <div class="form-group fade-in">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group fade-in">
+            <label for="request_details">Request Details:</label>
+            <textarea id="request_details" name="request_details" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group fade-in">
+            <label for="document">Upload Supporting Document:</label>
+            <input type="file" id="document" name="document" accept="image/*" required>
+        </div>
+
+        <div class="form-group fade-in">
+            <button type="submit" class="gradient-button">Submit Request</button>
+        </div>
+    </form>
+</section>
+{% endblock %}

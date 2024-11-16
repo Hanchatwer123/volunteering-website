@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="welcome" class="section welcome">
+    <div class="welcome-message fade-in">
+        <h2>Welcome to Heart to Heart!</h2>
+        <p>This is a platform for you to help those in need. Every small contribution makes a big difference. Join us and make a change today!</p>
+        <p><strong>How can you help?</strong></p>
+        <ul>
+            <li>Check the leaderboard to see how others are helping.</li>
+            <li>View requests from people who need support.</li>
+            <li>Update your profile to track your contributions.</li>
+        </ul>
+        <a href="{{ url_for('leaderboard') }}" class="gradient-button">Get Started</a>
+    </div>
+</section>
+{% endblock %}

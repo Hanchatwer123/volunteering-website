@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart to Heart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='hearttoheart.css') }}">
+</head>
+<body>
+    <nav class="top-menu">
+        <ul class="menu-main">
+            <li><a href="{{ url_for('index') }}" class="gradient-button">Index</a></li>
+            <li><a href="{{ url_for('leaderboard') }}" class="gradient-button">Leaderboard</a></li>
+            <li><a href="{{ url_for('requests') }}" class="gradient-button">Requests</a></li>
+            <li><a href="{{ url_for('profile') }}" class="gradient-button">Profile</a></li>
+            <li><a href="{{ url_for('apply') }}" class="gradient-button">Apply a request</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
