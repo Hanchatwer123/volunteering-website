@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Study</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #002b5c;
+            color: white;
+            padding: 20px 30px;
+            font-size: 18px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav button {
+            padding: 10px 20px;
+            background-color: white;
+            color: #002b5c;
+            border: 2px solid #002b5c;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        nav button:hover {
+            background-color: #00509e;
+            color: white;
+        }
+        .main-container {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+        }
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 25%; /* Adjusts width of the left section */
+        }
+        .square {
+            background-color: #002b5c;
+            color: white;
+            text-align: center;
+            padding: 40px; /* Increased padding for height */
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            height: 200px; /* Explicit height for the squares */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+        footer {
+            background-color: #002b5c;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+            margin-top: auto;
+            border-top: 2px solid #ccc;
+        }
+        footer p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #00aced;
+        }
+        .message-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #00509e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .message-icon::before {
+            content: "💬";
+            font-size: 24px;
+            color: white;
+        }
+        .message-popup {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border: 2px solid #002b5c;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .message-popup textarea {
+            width: 100%;
+            height: 80px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .message-popup button {
+            width: 100%;
+            background-color: #00509e;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .message-popup button:hover {
+            background-color: #002b5c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Alpha Study</div>
+        <nav>
+            <button onclick="showCourses()">Курсы</button>
+            <button onclick="window.location.href='#about'">О нас</button>
+            <button><a href="login.html" style="color: #002b5c; text-decoration: none;">Войти</a></button>
+            <button><a href="register.html" style="color: #002b5c; text-decoration: none;">Зарегистрироваться</a></button>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <div class="square">Example 1</div>
+            <div class="square">Example 2</div>
+            <div class="square">Example 3</div>
+        </div>
+        <!-- Main Content -->
+        <div class="content">
+            <h1>Добро пожаловать в Alpha Study</h1>
+            <p>Узнайте больше о наших курсах, обучении и достижениях.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Alpha Study. Все права защищены.</p>
+        <div class="social-icons">
+            <a href="#" target="_blank">📷</a>
+            <a href="#" target="_blank">🐦</a>
+            <a href="#" target="_blank">💼</a>
+        </div>
+    </footer>
+
+    <!-- Message Icon -->
+    <div class="message-icon" onclick="toggleMessagePopup()"></div>
+
+    <!-- Message Popup -->
+    <div class="message-popup" id="messagePopup">
+        <textarea placeholder="Введите сообщение..."></textarea>
+        <button onclick="sendMessage()">Отправить</button>
+    </div>
+
+    <script>
+        // Show or hide the message popup
+        function toggleMessagePopup() {
+            const popup = document.getElementById('messagePopup');
+            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Simulate sending a message
+        function sendMessage() {
+            alert('Ваше сообщение отправлено!');
+            toggleMessagePopup();
+        }
+
+        // Simulate login and registration
+        function login() {
+            window.location.href = "https://example.com/login";
+        }
+
+        function register() {
+            window.location.href = "https://example.com/register";
+        }
+    </script>
+</body>
+</html>
