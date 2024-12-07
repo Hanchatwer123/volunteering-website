@@ -1,3 +1,4 @@
+/* General reset */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -7,6 +8,7 @@ body {
   box-sizing: border-box;
 }
 
+/* Top Menu */
 .top-menu {
   background: linear-gradient(45deg, #ff6a00, #ff6a00);
   padding: 15px 30px;
@@ -39,6 +41,60 @@ body {
   color: #ffeb3b;
 }
 
+/* Registration/Login Forms */
+.register-container, .login-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+.register-container h2, .login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #002b5c;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00509e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #002b5c;
+}
+
+.login-link, .register-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login-link a, .register-link a {
+  color: #00509e;
+  text-decoration: none;
+}
+
+.login-link a:hover, .register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Section Titles and Layouts */
 .section {
   padding: 50px;
   margin-top: 60px; 
@@ -51,6 +107,7 @@ body {
   font-weight: bold;
 }
 
+/* Flex Row */
 .row {
   display: flex;
   flex-direction: row;
@@ -59,6 +116,7 @@ body {
   gap: 30px; 
 }
 
+/* Leaderboard Styles */
 .leaderboard .table {
   width: 100%;
   border-collapse: collapse;
@@ -80,6 +138,7 @@ body {
   background-color: #f2f2f2;
 }
 
+/* Requests Section */
 .requests {
   background-color: #ffeb3b;
 }
@@ -97,7 +156,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 30%; 
+  width: 30%;
 }
 
 .request-image {
@@ -113,6 +172,7 @@ body {
   font-weight: bold;
 }
 
+/* Profile Section */
 .profile {
   background-color: #ffb74d;
 }
@@ -145,6 +205,7 @@ body {
   margin: 10px 0;
 }
 
+/* Gradient Button */
 .gradient-button {
   background: linear-gradient(45deg, #ff6a00, #ff6a00);
   padding: 10px 20px;
@@ -161,6 +222,7 @@ body {
   background: linear-gradient(45deg, #ff6a00, #ffcc00);
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
   .requests-container {
     flex-direction: column; 
@@ -182,6 +244,7 @@ body {
   }
 }
 
+/* Apply Section */
 .apply {
   background-color: #f9f9f9;
   padding: 50px;
@@ -241,6 +304,7 @@ body {
   background: linear-gradient(45deg, #ff6a00, #ffeb3b);
 }
 
+/* Fade-in Animation */
 @keyframes fadeIn {
   0% {
       opacity: 0;
